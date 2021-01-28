@@ -12,6 +12,23 @@ module.exports = {
     "plugin:nuxt/recommended",
   ],
   plugins: ["prettier"],
-  // add your custom rules here
-  rules: {},
+  rules: {
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+        pathGroups: [
+          {
+            pattern: "./**",
+            group: "sibling",
+          },
+          {
+            pattern: "@/**",
+            group: "index",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["builtin"],
+      },
+    ],
+  },
 };
