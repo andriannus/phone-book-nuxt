@@ -1,4 +1,4 @@
-import { Location, Name } from "@/shared/model/random-user.model";
+import { Location, Name } from "@/shared/models/random-user.model";
 
 export function transformAddress(location: Location): string {
   const { city, postcode, state } = location;

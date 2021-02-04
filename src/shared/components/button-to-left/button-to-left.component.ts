@@ -7,7 +7,7 @@ import {
 
 import { ButtonToLeftState } from "./button-to-left.model";
 
-import QSlideUpTransition from "@/app/shared/components/slide-up-transition/slide-up-transition.component.vue";
+import QSlideUpTransition from "@/shared/components/slide-up-transition/slide-up-transition.component.vue";
 import {
   SCROLL_INTERVAL,
   SCROLL_STEP_DIVIDER,
