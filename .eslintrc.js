@@ -16,11 +16,17 @@ module.exports = {
     "import/order": [
       "error",
       {
+        alphabetize: { order: "asc", caseInsensitive: true },
+        groups: ["builtin", "external", "sibling", "parent", "index"],
         "newlines-between": "always-and-inside-groups",
         pathGroups: [
           {
             pattern: "./**",
             group: "sibling",
+          },
+          {
+            pattern: "../**",
+            group: "parent",
           },
           {
             pattern: "@/**",
