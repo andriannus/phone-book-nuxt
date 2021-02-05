@@ -13,10 +13,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api";
+import { defineComponent, useMeta } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "NotFound",
+
+  setup() {
+    useMeta({ title: "Page Not Found | Phone Book" });
+  },
+
+  head: {},
 });
 </script>
 
