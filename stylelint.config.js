@@ -9,7 +9,7 @@ module.exports = {
   // add your custom config here
   // https://stylelint.io/user-guide/configuration
   rules: {
-    "max-nesting-depth": 2,
+    "max-nesting-depth": 3,
     "string-quotes": "double",
     "selector-class-pattern": null,
   },
