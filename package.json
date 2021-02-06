@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "build": "nuxt-ts build",
+    "build:modern": "nuxt-ts build --modern=server",
     "dev": "nuxt-ts",
     "generate": "nuxt-ts generate",
+    "generate:modern": "nuxt-ts generate -m",
+    "heroku-postbuild": "npm run build:modern",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
     "start": "nuxt-ts start",
+    "start:modern": "nuxt-ts start --modern=server",
     "test": "jest"
   },
   "config": {
