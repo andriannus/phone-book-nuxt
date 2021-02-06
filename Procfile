@@ -1,1 +1,1 @@
-web: nuxt start:modern
+web: nuxt-ts start --modern=server
