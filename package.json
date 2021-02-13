@@ -12,6 +12,7 @@
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
+    "release": "standard-version",
     "start": "nuxt-ts start",
     "start:modern": "nuxt-ts start --modern=server",
     "test": "jest"
@@ -56,6 +57,7 @@
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "sass-loader": "^10.1.1",
+    "standard-version": "^9.1.0",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^7.1.0",
