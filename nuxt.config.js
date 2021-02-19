@@ -1,4 +1,6 @@
-export default {
+import { defineNuxtConfig } from "@nuxtjs/composition-api";
+
+export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "phone-book",
@@ -62,4 +64,4 @@ export default {
       },
     },
   },
-};
+});
