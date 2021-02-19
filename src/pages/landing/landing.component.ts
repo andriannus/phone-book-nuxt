@@ -4,8 +4,9 @@ import {
   onMounted,
   onUnmounted,
   reactive,
-  useContext,
   useMeta,
+  useRoute,
+  useRouter,
   watch,
 } from "@nuxtjs/composition-api";
 
@@ -42,10 +43,8 @@ export default defineComponent({
 
     const { apiInvoker } = useApiInvoker({});
     const ls = useLocalStorage();
-    const {
-      app: { router },
-      query: routeQuery,
-    } = useContext();
+    const route = useRoute();
+    const router = useRouter();
 
     const state = reactive<LandingState>({
       clientWidth: process.client ? document.body.clientWidth : 0,
@@ -55,6 +54,7 @@ export default defineComponent({
     });
 
     const isMobile = computed(() => state.clientWidth < 768);
+    const queryRef = computed(() => route.value.query);
 
     onMounted((): void => {
       initializePage();
@@ -65,12 +65,12 @@ export default defineComponent({
       window.removeEventListener("resize", onResize);
     });
 
-    watch(routeQuery, ({ page }): void => {
+    watch(queryRef, ({ page }): void => {
       paginateUsers(page as string);
     });
 
     function initializePage(): void {
-      const { page = "" } = routeQuery.value;
+      const { page = "" } = queryRef.value;
       const validPage = page || "1";
 
       if (!page) {
@@ -105,7 +105,7 @@ export default defineComponent({
     function navigate(query: LandingUrlQuery): void {
       router?.push({
         query: {
-          ...routeQuery.value,
+          ...route.value.query,
           ...query,
         },
       });
@@ -114,7 +114,7 @@ export default defineComponent({
     function transformRandomUsers(
       users: RandomUserData[],
     ): PaginatedData<RandomUserData> {
-      const { page = "1", sortBy = "" } = routeQuery.value;
+      const { page = "1", sortBy = "" } = queryRef.value;
 
       const colorfulUsers = useColorfulUsers(users);
       const sortedUsers = useSortUsers(colorfulUsers, sortBy as UserSort);
