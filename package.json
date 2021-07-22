@@ -25,7 +25,7 @@
   "dependencies": {
     "@amar-ui-web/core": "^1.2.2",
     "@nuxt/typescript-runtime": "^2.0.1",
-    "@nuxtjs/composition-api": "^0.20.2",
+    "@nuxtjs/composition-api": "^0.25.0",
     "@nuxtjs/pwa": "^3.3.4",
     "axios": "^0.21.1",
     "core-js": "^3.8.2",
